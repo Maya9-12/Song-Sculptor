@@ -7,8 +7,8 @@ import { Radio, RadioGroup, FormControl, FormControlLabel, FormLabel, Container,
   ListItem, ListItemText} from '@mui/material';
 
 //Spotify API info
-const clientId = 'b7669281233e4d4896b79718335c9975';
-const secret = '1d7ce05b5d634936bf54295f4d86ed0c';
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
 function App() {
 
