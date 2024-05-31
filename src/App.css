@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  width: 500px;
+  height: 500px;
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.image-list:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  border: 'solid 5px blue';
+}
+
+.primary {
+  color: blue;
+}
+
+.secondary {
+  color: palevioletred;
+}
