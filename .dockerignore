@@ -6,10 +6,5 @@ Dockerfile
 .dockerignore
 README.md
 *.log
-.env
-.env.local
-.env.development
-.env.test
-.env.production
 .vscode
 .idea

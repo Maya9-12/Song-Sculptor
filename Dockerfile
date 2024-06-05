@@ -1,7 +1,7 @@
 # Import node version
-FROM node:19-alpine as builder
+FROM node:14
 # Set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 # Copy package jsons
 COPY package.json .
 COPY package-lock.json .
@@ -10,8 +10,8 @@ RUN npm install
 # Add app
 COPY . .
 # Build app
-RUN npm build
-# Expose the port I run the app on
+RUN npm run build
+# Expose the port the app runs on
 EXPOSE 3000
-# Start app
+# Command to run the app
 CMD ["npm", "start"]

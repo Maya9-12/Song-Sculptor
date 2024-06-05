@@ -105,7 +105,6 @@ function App() {
       })));
     }
   } catch (error) {
-    console.error('An error occured during your search', error.message);
     alert('An error occured during your search', error.message);
   }
   }
@@ -132,7 +131,7 @@ function App() {
    const handleSearchClick = () => {
     const validatedInput = validateInput(userInput);
     if(validatedInput.trim() === '') {
-      alert('Please evter a valid search query.');
+      alert('Please enter a valid search query.');
       return;
     }
     setUserInput(validatedInput);
