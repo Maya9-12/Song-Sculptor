@@ -115,7 +115,7 @@ function App() {
     if(searchBy) {
       search();
     }
-   }, [searchBy]);  
+   }, [searchBy]); // eslint-disable-next-line react-hooks/exhaustive-deps
   
   //Validate user input by sanitizing and limiting input length
   const validateInput = (input) => {
