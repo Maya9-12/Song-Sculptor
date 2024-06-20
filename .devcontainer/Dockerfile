@@ -5,13 +5,13 @@ FROM node:16
 WORKDIR /workspaces/Song-Sculptor
 
 # Copy package.json and package-lock.json
-COPY ../package*.json ./
+COPY package*.json ./
 
 # Install app dependencies
 RUN npm install --legacy-peer-deps
 
 # Copy the rest of the app
-COPY ../ .
+COPY . .
 
 # Expose port 3000
 EXPOSE 3000
