@@ -16,7 +16,7 @@
 	"postCreateCommand": "npm install --legacy-peer-deps",
 	"remoteUser": "vscode",
 	"remoteEnv": {
-		"REACT_APP_SPOTIFY_CLIENT_ID": "${REACT_APP_SPOTIFY_CLIENT_ID}",
-    	"REACT_APP_SPOTIFY_CLIENT_SECRET": "${REACT_APP_SPOTIFY_CLIENT_SECRET}"
+		"REACT_APP_SPOTIFY_CLIENT_ID": "${secrets.REACT_APP_SPOTIFY_CLIENT_ID}",
+    	"REACT_APP_SPOTIFY_CLIENT_SECRET": "${secrets.REACT_APP_SPOTIFY_CLIENT_SECRET}"
 	}
 }
