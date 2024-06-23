@@ -16,19 +16,15 @@ jobs:
     env:
       REACT_APP_SPOTIFY_CLIENT_ID: ${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }}
       REACT_APP_SPOTIFY_CLIENT_SECRET: ${{ secrets.REACT_APP_SPOTIFY_CLIENT_SECRET }}
-
-    strategy:
-      matrix:
-        node-version: [19.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+      CI: false
 
     steps:
     - uses: actions/checkout@v4
     
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 19.x
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 19.x
         cache: 'npm'
         
     - run: npm ci --legacy-peer-deps
