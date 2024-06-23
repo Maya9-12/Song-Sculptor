@@ -1,20 +1,21 @@
-# Use an official Node.js image as the base
-FROM node:16
+FROM node:19
 
-# Create a directory for the app
-WORKDIR /workspaces/Song-Sculptor
+# Create vscode user and set permissions
+RUN useradd -ms /bin/bash vscode \
+    && mkdir -p /home/vscode/app \
+    && chown -R vscode:vscode /home/vscode
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Switch to vscode user
+USER vscode
 
-# Install app dependencies
+WORKDIR /home/vscode/app
+
+# Copy package files and install dependencies
+COPY --chown=vscode:vscode package*.json ./
 RUN npm install --legacy-peer-deps
 
-# Copy the rest of the app
-COPY . .
+# Copy the rest of the application files
+COPY --chown=vscode:vscode . .
 
-# Expose port 3000
-EXPOSE 3000
-
-# Start the app
+# Command to run the application
 CMD ["npm", "start"]
